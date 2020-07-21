@@ -1,72 +1,49 @@
-# Requirement
-A cash register (POS) system is used in the store for settlement of the store. This cashier will settle and print the receipt (Receipt) according to the item(Item) in the customer's shopping cart (Cart) at the time of settlement.
+tasking：
+	1. 统计每个item有多少
+		输入：barcodes：[String]
+		输出：cartItem: [{itemCode:String, quantity: int}]
+	2. 完善item的信息
+		输入：cartItem: [{itemCode:String, quantity: int}]
+		输出：cartItem: [{itemCode:String, itemName: String, quantity: int, unitPrice: int}]
+	3. 计算全部商品的总价
+		输入：cartItem: [{itemCode:String, itemName: String, quantity: int, unitPrice: int}]
+		输出：totalPrice: int
+	4. 格式化我们的数据
+		输入：cartItem: [{itemCode:String, itemName: String, quantity: int, unitPrice: int}]
+			  totalPrice: int
+		输出: receipt: String (单个商品的总价在这里用单价*数量，我感觉不用分多一步出来，在这直接乘就好了)
+	5. 输出数据
+		输入: String
+		输出：打印到了控制台上
 
-We need to implement a function called printReceipt, which can input the data of the specified format as a parameter and then output the text of the receipt in the browser console.
+		
+		统计每个item有多少
+	P	3min
+	D	20min
+	C	查了很久js统计数量的方法和js容器
+	A	要多练习js编程
+	
+		完善item的信息
+	P	3min
+	D	25min
+	C	同样查了很久的js方法
+	A	要多练习js编程
+	
+	
+		计算全部商品的总价
+	P	3min
+	D	10min
+	C	之前查的方法在这也能用，就快了一点
+	A	要多练习js编程
 
-This time, the input will be an array of barcodes (string). For example:
-```javascript
-[
-  'ITEM000000',
-  'ITEM000000',
-  'ITEM000000',
-  'ITEM000000',
-  'ITEM000000',
-  'ITEM000001',
-  'ITEM000001',
-  'ITEM000004'
-]
-```
-
-Then the output should be 
-```
-***<store earning no money>Receipt ***
-Name: Coca-Cola, Quantity: 5, Unit price: 3 (yuan), Subtotal: 15 (yuan)
-Name: Sprite, Quantity: 2, Unit price: 3 (yuan), Subtotal: 6 (yuan)
-Name: Battery, Quantity: 1, Unit price: 2 (yuan), Subtotal: 2 (yuan)
-----------------------
-Total: 23 (yuan)
-**********************
-```
-
-Suppose that our database is as follows:
-```javascript
-[
-   {
-      barcode: 'ITEM000000',
-      name: 'Coca-Cola',
-      price: 3
-    },
-    {
-      barcode: 'ITEM000001',
-      name: 'Sprite',
-      price: 3
-    },
-    {
-      barcode: 'ITEM000002',
-      name: 'Apple',
-      price: 5
-    },
-    {
-      barcode: 'ITEM000003',
-      name: 'Litchi',
-      price: 15
-    },
-    {
-      barcode: 'ITEM000004',
-      name: 'Battery',
-      price: 2
-    },
-    {
-      barcode: 'ITEM000005',
-      name: 'Instant Noodles',
-      price: 4
-    }
-]
-```
-
-# Principal
-
-1. Please draw context diagram.
-2. Please declare all the methods according to your diagram.
-3. Please implement the function according to the context diagram
-4. Please repeat step 3 until all functions are implemented.
+		格式化我们的数据
+	P	7min
+	D	5min
+	C	格式化比较简单
+	A	照着需求来拼接
+	
+		输出数据
+	P	4min
+	D	6min
+	C	这里超了时间是因为要照着错误来更改格式,实际原因还是不太熟JS
+	A	要多练习js编程
